@@ -25,21 +25,25 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          {
-            family: `Roboto`,
-            variants: [`400`, `500`, `700`],
-          },
-          {
-            family: `Open Sans`,
-          },
-          {
-            family: `Caveat`,
-          },
-        ],
-      },
-    },
+        fonts: {
+          google: [
+            {
+              family: "Roboto",
+              variants: ["300", "400", "500", "700"]
+            },
+            {
+              family: "Open Sans",
+              variants: ["400"]
+            },
+            {
+              family: "Caveat",
+              variants: ["400"]
+            }
+          ]
+        }
+      }
+    }
   ],
 }

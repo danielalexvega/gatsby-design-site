@@ -9,6 +9,10 @@ Variables
 ===============
 */
 
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Open+Sans&family=Roboto:wght@400;500;700&display=swap');
+
+
 :root {
   /* dark shades of primary color*/
   --clr-primary-1: hsl(21, 91%, 17%);
