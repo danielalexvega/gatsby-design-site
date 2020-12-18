@@ -1,37 +1,37 @@
-import React from "react"
+import React from "react";
 import {
   GiCompass,
   GiDiamondHard,
   GiStabbedNote,
   GiBriefcase,
-} from "react-icons/gi"
+} from "react-icons/gi";
 export default [
   {
     id: 1,
     icon: <GiCompass className="icon" />,
     label: "mission",
     text:
-      " Activated charcoal post-ironic unicorn flexitarian tumeric, direct trade man bun mumblecore kickstarter art party. ",
+      "We aspire to provide our clients the homes of their dreams; a place where they will feel safe and secure. We want to create the perfect space to create memories, somewhere to recharge your batteries, and somewhere you will stay for a lifetime. ",
   },
   {
     id: 2,
     icon: <GiDiamondHard className="icon" />,
     label: "vision",
     text:
-      " Brooklyn mustache polaroid neutra. Wolf subway tile gluten-free bushwick, godard letterpress pitchfork direct trade put a bird on",
+      "We're always looking for ways to innovate, to improve on our process, and to inspire. Our designers are versed in many styles and forms, and we are constantly trying to find more ways to make our clients vision a reality.",
   },
   {
     id: 3,
     icon: <GiStabbedNote className="icon" />,
     label: "history",
     text:
-      "Chia pinterest locavore letterpress tote bag. Subway tile PBR&B knausgaard locavore quinoa four loko disrupt photo booth hella.",
+      "We've been designing and remodeling homes in Austin and Central Texas since 1986.",
   },
   {
     id: 4,
     icon: <GiBriefcase className="icon" />,
     label: "work",
     text:
-      "Man braid banh mi prism disrupt hella cray mlkshk jean shorts typewriter synth salvia direct trade pabst knausgaard.",
+      "'If You don't work, you don't eat, you don't grind, you don't shine. No ifs ands or buts, bottom line.' - Mike Jones ",
   },
 ]

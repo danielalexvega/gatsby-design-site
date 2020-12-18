@@ -1,9 +1,22 @@
-import React from "react"
-import styled from "styled-components"
-import Title from "./Title"
-import services from "../constants/services"
+import React from "react";
+import styled from "styled-components";
+import Title from "./Title";
+import services from "../constants/services";
+
 const About = () => {
-  return <h2>about component</h2>
+  return <Wrapper className='section'>
+    <Title title={'about us'} />
+    <h6>title</h6>
+    <div className="section-center">
+      {services.map(({ id, icon, label, text }) => {
+        return <article id={id}>
+          <span>{icon}</span>
+          <h4>{label}</h4>
+          <p>{text}</p>
+        </article>
+      })}
+    </div>
+  </Wrapper>
 }
 const Wrapper = styled.section`
   .section-center {
@@ -36,4 +49,4 @@ const Wrapper = styled.section`
     }
   }
 `
-export default About
+export default About;
