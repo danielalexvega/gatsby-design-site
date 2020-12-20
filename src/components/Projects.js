@@ -1,11 +1,38 @@
-import React from "react"
-import { Link } from "gatsby"
-import Title from "./Title"
-import styled from "styled-components"
-import Image from "gatsby-image"
-import SearchButtons from "./SearchButtons"
-const Projects = () => {
-  return <h2>projects component</h2>
+import React, { useState } from "react";
+import { Link } from "gatsby";
+import Title from "./Title";
+import styled from "styled-components";
+import Image from "gatsby-image";
+import SearchButtons from "./SearchButtons";
+
+const Projects = ({ projects: data, title }) => {
+  const [projects, setProjects] = useState(data);
+  // more logic
+
+  return (
+    <Wrapper className="section">
+      <Title title={title || "projects"} />
+      {/* search buttons here */}
+      <div className="section-center">
+        {projects.map(project => {
+          const { id } = project;
+          const { name, type } = project.data;
+          const fluid = project.data.image.localFiles[0].childImageSharp.fluid;
+
+          return <article key={id}>
+            <div className="container">
+              <Image fluid={fluid} className="img" />
+              <div className="info">
+                <p>- {type} -</p>
+                <h3>{name}</h3>
+              </div>
+            </div>
+          </article>
+        })}
+      </div>
+
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`

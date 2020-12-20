@@ -1,5 +1,5 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from "react";
+import { graphql } from "gatsby";
 import {
   Layout,
   Hero,
@@ -8,15 +8,43 @@ import {
   Survey,
   Slider,
   GridProjects,
-} from "../components"
-import SEO from "../components/seo"
-const HomePage = () => {
+} from "../components";
+import SEO from "../components/seo";
+
+
+const HomePage = ({ data }) => {
+  const { allAirtable: { nodes: projects } } = data;
   return (
     <Layout>
       <Hero />
       <About />
+      <Projects projects={projects} title="latest projects" />
     </Layout>
   )
 }
 
-export default HomePage
+export const query = graphql`
+  {
+    allAirtable(filter: {table: {eq: "Projects"}}, limit: 3, sort: {fields: data___date, order: DESC}) {
+      nodes {
+        id
+        data {
+          date
+          name
+          type
+          image {
+            localFiles {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  `
+
+export default HomePage;
