@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Image from "gatsby-image";
 import SearchButtons from "./SearchButtons";
 
-const Projects = ({ projects: data, title }) => {
+const Projects = ({ projects: data, title, page }) => {
   const [projects, setProjects] = useState(data);
   // more logic
 
@@ -30,6 +30,13 @@ const Projects = ({ projects: data, title }) => {
           </article>
         })}
       </div>
+      {
+        !page &&
+        <Link to="/projects" className="btn">
+          all projects
+        </Link>
+      }
+
 
     </Wrapper>
   )
