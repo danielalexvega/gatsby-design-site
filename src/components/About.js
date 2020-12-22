@@ -9,7 +9,7 @@ const About = () => {
     <h6>title</h6>
     <div className="section-center">
       {services.map(({ id, icon, label, text }) => {
-        return <article id={id}>
+        return <article id={id} key={id}>
           <span>{icon}</span>
           <h4>{label}</h4>
           <p>{text}</p>
