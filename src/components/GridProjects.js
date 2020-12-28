@@ -1,10 +1,35 @@
-import React from "react"
-import Title from "./Title"
-import Image from "gatsby-image"
-import styled from "styled-components"
-import { Link } from "gatsby"
-const GridProjects = () => {
-  return <h2>grid projects</h2>
+import React from "react";
+import Title from "./Title";
+import Image from "gatsby-image";
+import styled from "styled-components";
+import { Link } from "gatsby";
+
+const GridProjects = ({ projects, title }) => {
+  return (
+    <Wrapper>
+      <Title title={title || 'projects'} />
+      <div className="tile-layout">
+        {projects.map((project, index) => {
+          const { id } = project;
+          const { name, type } = project.data;
+          const fluid = project.data.image.localFiles[0].childImageSharp.fluid;
+
+          return (
+            <article key={id} className={`div-${index}`}>
+              <Image fluid={fluid} className="img" />
+              <div className="info">
+                <p>- {type} -</p>
+                <h1>{name}</h1>
+              </div>
+            </article>
+          )
+        })}
+      </div>
+      <Link to="/projects" className="btn">
+        all projects
+      </Link>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
